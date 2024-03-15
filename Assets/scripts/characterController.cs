@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class characterController : MonoBehaviour
 {
@@ -8,6 +10,23 @@ public class characterController : MonoBehaviour
 
     private Rigidbody2D rBody;
     private BoxCollider2D boxColl;
+
+    bool move;
+
+    public void controls(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            Vector2 dir = ctx.ReadValue<Vector2>();
+            move = true;
+        } 
+        else if (ctx.canceled)
+        {
+            move = false;
+        }
+
+    }
+
 
 
     private void Awake()
@@ -18,19 +37,7 @@ public class characterController : MonoBehaviour
 
     private void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        rBody.velocity = new Vector2(horizontalInput, verticalInput) * speed;
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            speed = 10;
-            rBody.velocity = new Vector2(rBody.velocity.x, speed);
-        }
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            speed = 5;
-        }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
