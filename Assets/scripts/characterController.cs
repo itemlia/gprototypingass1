@@ -13,13 +13,22 @@ public class characterController : MonoBehaviour
 
     bool move;
 
+    GameInputControls playerMovement;
+
+    public void OnEnable()
+    {
+        //playerMovement.Enable();
+        //playerMovement.movement.controls.canceled += controls;
+    }
+
+
     public void controls(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
         {
             Vector2 dir = ctx.ReadValue<Vector2>();
             move = true;
-        } 
+        }
         else if (ctx.canceled)
         {
             move = false;
@@ -33,6 +42,8 @@ public class characterController : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
         boxColl = GetComponent<BoxCollider2D>();
+
+        playerMovement = new GameInputControls();
     }
 
     private void Update()
