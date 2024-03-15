@@ -24,13 +24,22 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
     ""name"": ""gameInputControls"",
     ""maps"": [
         {
-            ""name"": ""playerMovement"",
+            ""name"": ""movement"",
             ""id"": ""f5cce798-b918-4f4c-852a-17d1f21ce3ac"",
             ""actions"": [
                 {
-                    ""name"": ""controls"",
+                    ""name"": ""WASD"",
                     ""type"": ""Value"",
                     ""id"": ""a08853c3-b0bc-4ad4-b3bb-ce6822151c56"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""jump"",
+                    ""type"": ""Value"",
+                    ""id"": ""2454de01-0f07-4fbd-b58f-5f11fbf8eb14"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -45,7 +54,7 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""controls"",
+                    ""action"": ""WASD"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -56,7 +65,7 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""controls"",
+                    ""action"": ""WASD"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -67,29 +76,7 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""controls"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""813e4a0c-f2f0-4e83-bb64-c74df21c0abb"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""controls"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""ed6eb02c-6865-4c11-a4a9-8740e997eb56"",
-                    ""path"": ""<Joystick>/stick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""controls"",
+                    ""action"": ""WASD"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -100,7 +87,7 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""controls"",
+                    ""action"": ""WASD"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -111,7 +98,7 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""controls"",
+                    ""action"": ""WASD"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -122,7 +109,7 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""controls"",
+                    ""action"": ""WASD"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -133,9 +120,20 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""controls"",
+                    ""action"": ""WASD"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6b46738-c66f-48af-9b91-23a849eb91f2"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,8 +141,9 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
     ""controlSchemes"": []
 }");
         // movement
-        m_movement = asset.FindActionMap("playerMovement", throwIfNotFound: true);
-        m_movement_controls = m_movement.FindAction("controls", throwIfNotFound: true);
+        m_movement = asset.FindActionMap("movement", throwIfNotFound: true);
+        m_movement_WASD = m_movement.FindAction("WASD", throwIfNotFound: true);
+        m_movement_jump = m_movement.FindAction("jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -206,12 +205,14 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
     // movement
     private readonly InputActionMap m_movement;
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
-    private readonly InputAction m_movement_controls;
+    private readonly InputAction m_movement_WASD;
+    private readonly InputAction m_movement_jump;
     public struct MovementActions
     {
         private @GameInputControls m_Wrapper;
         public MovementActions(@GameInputControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @controls => m_Wrapper.m_movement_controls;
+        public InputAction @WASD => m_Wrapper.m_movement_WASD;
+        public InputAction @jump => m_Wrapper.m_movement_jump;
         public InputActionMap Get() { return m_Wrapper.m_movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -221,16 +222,22 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_MovementActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_MovementActionsCallbackInterfaces.Add(instance);
-            @controls.started += instance.OnControls;
-            @controls.performed += instance.OnControls;
-            @controls.canceled += instance.OnControls;
+            @WASD.started += instance.OnWASD;
+            @WASD.performed += instance.OnWASD;
+            @WASD.canceled += instance.OnWASD;
+            @jump.started += instance.OnJump;
+            @jump.performed += instance.OnJump;
+            @jump.canceled += instance.OnJump;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
         {
-            @controls.started -= instance.OnControls;
-            @controls.performed -= instance.OnControls;
-            @controls.canceled -= instance.OnControls;
+            @WASD.started -= instance.OnWASD;
+            @WASD.performed -= instance.OnWASD;
+            @WASD.canceled -= instance.OnWASD;
+            @jump.started -= instance.OnJump;
+            @jump.performed -= instance.OnJump;
+            @jump.canceled -= instance.OnJump;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -250,6 +257,7 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
     public MovementActions @movement => new MovementActions(this);
     public interface IMovementActions
     {
-        void OnControls(InputAction.CallbackContext context);
+        void OnWASD(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }

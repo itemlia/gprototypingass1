@@ -1,67 +1,59 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class characterController : MonoBehaviour
 {
     public float speed;
 
     private Rigidbody2D rBody;
-    private BoxCollider2D boxColl;
+    private CircleCollider2D circColl;
 
-    bool move;
+   
 
-    GameInputControls playerMovement;
-
-    public void OnEnable()
-    {
-        //playerMovement.Enable();
-        //playerMovement.movement.controls.canceled += controls;
-    }
-
-
-    public void controls(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            Vector2 dir = ctx.ReadValue<Vector2>();
-            move = true;
-        }
-        else if (ctx.canceled)
-        {
-            move = false;
-        }
-
-    }
-
-
+    private Vector3 value;
 
     private void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
-        boxColl = GetComponent<BoxCollider2D>();
+        circColl = GetComponent<CircleCollider2D>();
 
-        playerMovement = new GameInputControls();
     }
+
+
+    public void onMove(InputAction.CallbackContext context)
+    {
+        value = context.ReadValue<Vector2>();
+
+    }
+
+    public void spaceBar(InputAction.CallbackContext context)
+    {
+        if (context.interaction is HoldInteraction)
+        {
+            Debug.Log(context);
+
+            if (circColl.transform.tag == "rock")
+            {
+                Debug.Log("test");
+                value = context.ReadValue<Vector2>();
+
+            }
+        }
+    }
+
 
     private void Update()
     {
-       
+        transform.Translate(value * (speed * Time.deltaTime));
+        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("rock"))
-        {
-            rBody.gravityScale = 0;
-        }
-        else
-        {
-            rBody.gravityScale = 20;
-        }
-    }
+    
 
 
 }

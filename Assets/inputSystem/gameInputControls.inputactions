@@ -1,14 +1,23 @@
 {
-    "name": "inputSystem",
+    "name": "gameInputControls",
     "maps": [
         {
             "name": "movement",
             "id": "f5cce798-b918-4f4c-852a-17d1f21ce3ac",
             "actions": [
                 {
-                    "name": "controls",
+                    "name": "left/right",
                     "type": "Value",
                     "id": "a08853c3-b0bc-4ad4-b3bb-ce6822151c56",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "jump",
+                    "type": "Value",
+                    "id": "2454de01-0f07-4fbd-b58f-5f11fbf8eb14",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -23,53 +32,9 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "controls",
+                    "action": "left/right",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "86140e23-cb18-4fe1-98e3-eb43a91e7174",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "controls",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "up",
-                    "id": "377d1210-2c48-4e2d-84b0-b6d8f0753439",
-                    "path": "<Joystick>/stick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "controls",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "813e4a0c-f2f0-4e83-bb64-c74df21c0abb",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "controls",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "ed6eb02c-6865-4c11-a4a9-8740e997eb56",
-                    "path": "<Joystick>/stick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "controls",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "left",
@@ -78,7 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "controls",
+                    "action": "left/right",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -89,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "controls",
+                    "action": "left/right",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -100,7 +65,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "controls",
+                    "action": "left/right",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -111,7 +76,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "controls",
+                    "action": "left/right",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "b95cff5f-5e5a-4f4a-becd-216f123068b4",
+                    "path": "2DVector",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "jump",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "9ada48c2-2933-4393-9d5e-ffd6dec915a8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "jump",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "up",
+                    "id": "35845ea9-0339-436a-94ac-397e7b03aab8",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "jump",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

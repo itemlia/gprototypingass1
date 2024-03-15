@@ -764,9 +764,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1763324798}
-        m_TargetAssemblyTypeName: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem
-        m_MethodName: DebugLogAction
+      - m_Target: {fileID: 1763324795}
+        m_TargetAssemblyTypeName: characterController, Assembly-CSharp
+        m_MethodName: onMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -778,6 +778,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a08853c3-b0bc-4ad4-b3bb-ce6822151c56
     m_ActionName: movement/controls[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1763324795}
+        m_TargetAssemblyTypeName: characterController, Assembly-CSharp
+        m_MethodName: spaceBar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2454de01-0f07-4fbd-b58f-5f11fbf8eb14
+    m_ActionName: movement/jump[/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: movement
