@@ -13,6 +13,7 @@ public class characterController : MonoBehaviour
     private Rigidbody2D rBody;
     private CircleCollider2D circColl;
 
+    private bool collided;
    
 
     private Vector3 value;
@@ -21,9 +22,26 @@ public class characterController : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
         circColl = GetComponent<CircleCollider2D>();
+        
 
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("rock"))
+        {
+            collided = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("rock"))
+        {
+            collided = false;
+        }
+    }
 
     public void onMove(InputAction.CallbackContext context)
     {
@@ -35,9 +53,8 @@ public class characterController : MonoBehaviour
     {
         if (context.interaction is HoldInteraction)
         {
-            Debug.Log(context);
-
-            if (circColl.transform.tag == "rock")
+           
+            if (collided == true)
             {
                 Debug.Log("test");
                 value = context.ReadValue<Vector2>();
