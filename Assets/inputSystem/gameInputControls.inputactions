@@ -84,7 +84,7 @@
                     "name": "2D Vector",
                     "id": "b95cff5f-5e5a-4f4a-becd-216f123068b4",
                     "path": "2DVector",
-                    "interactions": "Hold",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "jump",

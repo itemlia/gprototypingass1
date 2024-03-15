@@ -51,7 +51,7 @@ public class characterController : MonoBehaviour
 
     public void spaceBar(InputAction.CallbackContext context)
     {
-        if (context.interaction is HoldInteraction)
+        if (context.interaction is PressInteraction)
         {
            
             if (collided == true)
