@@ -12,6 +12,7 @@ public class characterController : MonoBehaviour
 
     private Rigidbody2D rBody;
     private CircleCollider2D circColl;
+    
 
     private bool collided;
    
@@ -23,7 +24,6 @@ public class characterController : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         circColl = GetComponent<CircleCollider2D>();
         
-
     }
 
 
@@ -32,6 +32,7 @@ public class characterController : MonoBehaviour
         if (collision.CompareTag("rock"))
         {
             collided = true;
+            rBody.gravityScale = 0;
         }
     }
 
@@ -40,6 +41,8 @@ public class characterController : MonoBehaviour
         if (collision.CompareTag("rock"))
         {
             collided = false;
+            rBody.gravityScale = 1
+                ;
         }
     }
 
@@ -58,6 +61,7 @@ public class characterController : MonoBehaviour
             {
                 Debug.Log("test");
                 value = context.ReadValue<Vector2>();
+               
 
             }
         }
