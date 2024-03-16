@@ -123,6 +123,93 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &70327084
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5696509893617112018, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_Name
+      value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696509893617112018, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_TagString
+      value: debris
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.59511614
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.497915
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221762716305353674, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5696509893617112018, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 70327086}
+  m_SourcePrefab: {fileID: 100100000, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+--- !u!1 &70327085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5696509893617112018, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
+  m_PrefabInstance: {fileID: 70327084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &70327086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70327085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f65709a6b41e94eb393e153a60166f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 2
+  debris: {fileID: 5696509893617112018, guid: 4ffb2729534f1ae46abc7720ea05974b, type: 3}
 --- !u!1 &186046326
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +842,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1763324795}
         m_TargetAssemblyTypeName: characterController, Assembly-CSharp
-        m_MethodName: spaceBar
+        m_MethodName: climbFunc
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -767,6 +854,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2454de01-0f07-4fbd-b58f-5f11fbf8eb14
     m_ActionName: movement/jump[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1763324795}
+        m_TargetAssemblyTypeName: characterController, Assembly-CSharp
+        m_MethodName: hitDebris
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 27c01b63-7567-4e25-b3ff-e06bdd3b5314
+    m_ActionName: movement/hit[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: movement

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - rock
   - player
+  - debris
   layers:
   - Default
   - TransparentFX
