@@ -6,36 +6,41 @@ using UnityEngine;
 
 public class objectController : MonoBehaviour
 {
-    private Transform tRock;
-    private Transform tPlayer;
-
-    private bool condition;
+    public Transform tRock;
+    public Transform tPlayer;
 
     public float timer;
 
     public GameObject debris;
 
-    private void Update()
+    
+    IEnumerator dropTimer()
+    {
+        while (tPlayer.position.y != tRock.position.y)
+        {
+            yield return new WaitForSeconds(timer);
+            Instantiate(debris, new Vector3(tRock.position.x, tRock.position.y, 0f), Quaternion.identity);
+        }
+    }
+    
+    private void Start()
     {
         tRock = GameObject.Find("rock").GetComponent<Transform>();
         tPlayer = GameObject.Find("player").GetComponent<Transform>();
 
-        while (tPlayer.position.y != tRock.position.y)
-        {
-            StartCoroutine(dropTimer());
 
-        }
+        StartCoroutine(dropTimer());
 
     }
 
-
-    IEnumerator dropTimer()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        yield return new WaitForSeconds(timer);
-        Instantiate(debris, new Vector3(tRock.position.x, tRock.position.y, 0f), Quaternion.identity);
-        
+        if(collision.gameObject.CompareTag("ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 
-    //tPlayer.position.y != tRock.position.y
+
 
 }

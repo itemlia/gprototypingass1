@@ -182,7 +182,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 490248fc4722d184db1712155550b262, type: 3}
   m_Color: {r: 0.5471698, g: 0.3650766, b: 0.17653969, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -202,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 186046326}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 1.31, z: 0}
+  m_LocalPosition: {x: -0.15, y: 20.2, z: 0}
   m_LocalScale: {x: 7.1144, y: 10.7974, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -240,18 +240,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.017121315, y: -1.1224577}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.49999997, y: 0.997491}
+    oldSize: {x: 2.25, y: 2.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.2327094, y: 2.2521887}
   m_EdgeRadius: 0
 --- !u!1 &351026945
 GameObject:
@@ -584,6 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 880066474}
   - component: {fileID: 880066473}
+  - component: {fileID: 880066475}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -658,6 +659,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &880066475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880066472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f65709a6b41e94eb393e153a60166f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition: 0
+  timer: 2
+  debris: {fileID: 880066472}
 --- !u!1 &1763324792
 GameObject:
   m_ObjectHideFlags: 0
