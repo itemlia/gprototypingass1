@@ -13,10 +13,8 @@ public class characterController : MonoBehaviour
     private Rigidbody2D rBody;
     private CircleCollider2D circColl;
 
-    private GameObject fallingDebris;
-
     private bool collided;
-    private bool debris;
+   
 
     private Vector3 value;
 
@@ -35,10 +33,7 @@ public class characterController : MonoBehaviour
             collided = true;
             rBody.gravityScale = 0;
         } 
-        else if (collision.CompareTag("debris"))
-        {
-            debris = true;
-        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -48,11 +43,7 @@ public class characterController : MonoBehaviour
             collided = false;
             rBody.gravityScale = 1;
         }
-        else if (collision.CompareTag("debris"))
-        {
-            debris = false;
-            fallingDebris = collision.gameObject;
-        }
+       
     }
 
     public void onMove(InputAction.CallbackContext context)
@@ -71,16 +62,7 @@ public class characterController : MonoBehaviour
         }
     }
 
-    public void hitDebris(InputAction.CallbackContext context)
-    {
-        if (context.interaction is TapInteraction)
-        {
-            if (debris == true)
-            {
-                Destroy(fallingDebris);
-            }
-        }
-    }
+   
 
     private void Update()
     {

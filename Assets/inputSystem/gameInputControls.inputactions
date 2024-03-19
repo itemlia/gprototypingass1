@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "jump",
+                    "name": "moveUp",
                     "type": "Value",
                     "id": "2454de01-0f07-4fbd-b58f-5f11fbf8eb14",
                     "expectedControlType": "Vector2",
@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "hit",
+                    "name": "hitDebris",
                     "type": "Button",
                     "id": "27c01b63-7567-4e25-b3ff-e06bdd3b5314",
                     "expectedControlType": "Button",
@@ -96,7 +96,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "jump",
+                    "action": "moveUp",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -107,18 +107,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "jump",
+                    "action": "moveUp",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "up",
                     "id": "35845ea9-0339-436a-94ac-397e7b03aab8",
-                    "path": "<Joystick>/trigger",
+                    "path": "*/{PrimaryAction}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "jump",
+                    "action": "moveUp",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -129,18 +129,18 @@
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "",
-                    "action": "hit",
+                    "action": "hitDebris",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "093a5e09-ca15-445f-a371-924ab9b0f82a",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "Tap",
+                    "id": "35e8078a-8ea9-4974-bbf1-a047509ef524",
+                    "path": "*/{PrimaryAction}",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "hit",
+                    "action": "hitDebris",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

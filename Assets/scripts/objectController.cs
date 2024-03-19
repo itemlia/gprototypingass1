@@ -10,16 +10,17 @@ public class objectController : MonoBehaviour
     public Transform tPlayer;
 
     public float timer;
+    public float offset;
 
     public GameObject debris;
 
     
     IEnumerator dropTimer()
     {
-        while (tPlayer.position.y != tRock.position.y)
+        while (tPlayer.position.y <= tRock.position.y)
         {
             yield return new WaitForSeconds(timer);
-            Instantiate(debris, new Vector3(tRock.position.x, tRock.position.y, 0f), Quaternion.identity);
+            Instantiate(debris, new Vector3(tRock.position.x + offset, tRock.position.y, 0f), Quaternion.identity);
         }
     }
     
@@ -33,14 +34,7 @@ public class objectController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("ground"))
-        {
-            Destroy(gameObject);
-        }
-    }
-
+ 
 
 
 }
