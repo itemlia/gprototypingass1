@@ -7,12 +7,12 @@ using UnityEngine.InputSystem;
 public class hitDebris : MonoBehaviour
 {
 
-    private GameObject fallingDebris;
+    public GameObject fallingDebris;
 
-    private bool debris;
+    public bool debris;
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
+    { 
         if (collision.gameObject.CompareTag("debris"))
         {
             debris = true;
@@ -30,12 +30,10 @@ public class hitDebris : MonoBehaviour
 
     public void hitFallingDebris(InputAction.CallbackContext context)
     {
-        if (context.interaction is TapInteraction)
+        if (context.interaction is MultiTapInteraction && debris == true)
         {
-            if (debris == true)
-            {
-                Destroy(fallingDebris);
-            }
+            Debug.Log("hit");
+            Destroy(fallingDebris);
         }
     }
 }

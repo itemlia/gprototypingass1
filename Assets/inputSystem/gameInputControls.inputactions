@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "hitDebris",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "27c01b63-7567-4e25-b3ff-e06bdd3b5314",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -93,7 +93,7 @@
                     "name": "2D Vector",
                     "id": "b95cff5f-5e5a-4f4a-becd-216f123068b4",
                     "path": "2DVector",
-                    "interactions": "Press",
+                    "interactions": "Hold(duration=1,pressPoint=1)",
                     "processors": "",
                     "groups": "",
                     "action": "moveUp",
@@ -126,7 +126,7 @@
                     "name": "",
                     "id": "01a6ebe5-eb2e-45b7-b2d5-ea1cbc5991db",
                     "path": "<Keyboard>/space",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "hitDebris",

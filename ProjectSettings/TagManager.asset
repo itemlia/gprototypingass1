@@ -8,6 +8,10 @@ TagManager:
   - player
   - debris
   - ground
+  - low
+  - medium
+  - high
+  - very high
   layers:
   - Default
   - TransparentFX
