@@ -1,11 +1,14 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gameOver : MonoBehaviour
 {
     public TextMeshProUGUI textComp;
+
+    public Button button;
 
     public string gameOverText;
 
@@ -15,6 +18,8 @@ public class gameOver : MonoBehaviour
     {
         textComp.text = string.Empty;
 
+        button = GameObject.Find("button").GetComponent<Button>();
+
     }
 
     public void Update()
@@ -23,6 +28,7 @@ public class gameOver : MonoBehaviour
 
         if (playerHealth <= 0)
         {
+            button.gameObject.SetActive(true);
             textComp.text = gameOverText;
         }
     }
