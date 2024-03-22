@@ -12,6 +12,7 @@ TagManager:
   - medium
   - high
   - very high
+  - button
   layers:
   - Default
   - TransparentFX

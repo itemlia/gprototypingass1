@@ -17,7 +17,6 @@ public class gameOver : MonoBehaviour
     public void Start()
     {
         textComp.text = string.Empty;
-
         button = GameObject.FindWithTag("button").GetComponent<Button>();
 
     }

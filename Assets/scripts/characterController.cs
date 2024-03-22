@@ -15,7 +15,7 @@ public class characterController : MonoBehaviour
 
     private bool collided;
     public float health = 100;
-    public float points = 0;
+    
 
     private Vector3 value;
 
@@ -112,7 +112,7 @@ public class characterController : MonoBehaviour
     {
         transform.Translate(value * (speed * Time.deltaTime));
 
-     
+        
     }
 
     

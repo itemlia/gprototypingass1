@@ -12,6 +12,7 @@ public class objectController : MonoBehaviour
     public float timer;
     public float offset;
 
+
     public GameObject debris;
 
     

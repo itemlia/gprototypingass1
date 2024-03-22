@@ -2,25 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class retryButton : MonoBehaviour
 {
-    public float playerHealth;
-
     public TextMeshProUGUI textComp;
+
+    public Button retry;
 
     public void Start()
     {
-        playerHealth = GameObject.Find("player").GetComponent<characterController>().health;
+        
         textComp = GameObject.Find("game over").GetComponent<TextMeshProUGUI>();
+
+        gameObject.SetActive(false);
+
+        var btn = retry.GetComponent<Button>();
+        btn.onClick.AddListener(retryLevel);
     }
     
 
-    public void OnMouseDown()
+    public void retryLevel()
     {
-        playerHealth = 100;
         textComp.text = string.Empty;
         gameObject.SetActive(false);
+
+        GameObject.Find("player").GetComponent<characterController>().health = 100;
+        GameObject.Find("player").GetComponent<hitDebris>().pointsCounter = 0;
+        
     }
 
 }
