@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.Interactions;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class hitDebris : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class hitDebris : MonoBehaviour
 
     public bool debris;
 
+    public float pointsCounter = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     { 
         if (collision.gameObject.CompareTag("debris"))
@@ -32,8 +34,12 @@ public class hitDebris : MonoBehaviour
     {
         if (context.interaction is MultiTapInteraction && debris == true)
         {
-            Debug.Log("hit");
+            
+            pointsCounter = pointsCounter + 1;
             Destroy(fallingDebris);
+            Debug.Log("hit");
         }
     }
+
+   
 }
