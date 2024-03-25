@@ -14,6 +14,8 @@ public class gameOver : MonoBehaviour
 
     public float playerHealth;
 
+    
+
     public void Start()
     {
         textComp.text = string.Empty;
@@ -25,11 +27,13 @@ public class gameOver : MonoBehaviour
     public void Update()
     {
         playerHealth = GameObject.Find("player").GetComponent<characterController>().health;
+        
 
         if (playerHealth <= 0)
         {
             button.gameObject.SetActive(true);
             textComp.text = gameOverText;
+            
         }
     }
 }

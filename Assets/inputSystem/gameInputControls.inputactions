@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "MultiTap",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "useShield",
+                    "type": "Button",
+                    "id": "83179a44-24fe-4cdf-a3f8-3c52af847a40",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.5,pressPoint=1)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -114,7 +123,7 @@
                 {
                     "name": "up",
                     "id": "35845ea9-0339-436a-94ac-397e7b03aab8",
-                    "path": "*/{PrimaryAction}",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -136,11 +145,33 @@
                 {
                     "name": "",
                     "id": "35e8078a-8ea9-4974-bbf1-a047509ef524",
-                    "path": "*/{PrimaryAction}",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "hitDebris",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71a1b086-dd4f-4e3e-8842-2156bd849a4e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "useShield",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c776e70-a076-4fb4-83cc-05a35dc23edb",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "useShield",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
