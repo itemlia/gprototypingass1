@@ -111,8 +111,6 @@ public class characterController : MonoBehaviour
     private void Update()
     {
         transform.Translate(value * (speed * Time.deltaTime));
-
-        
     }
 
     

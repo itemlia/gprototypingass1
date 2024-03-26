@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class retryButton : MonoBehaviour
@@ -13,9 +14,10 @@ public class retryButton : MonoBehaviour
 
     public Transform playerTransform;
 
+    public objectController oC;
+
     public void Start()
     {
-        
         textComp = GameObject.Find("game over").GetComponent<TextMeshProUGUI>();
 
         gameObject.SetActive(false);
@@ -28,14 +30,10 @@ public class retryButton : MonoBehaviour
 
     public void retryLevel()
     {
-        textComp.text = string.Empty;
-        textCOmp2.text = string.Empty;
+        
         gameObject.SetActive(false);
-
-        GameObject.Find("player").GetComponent<characterController>().health = 100;
-        GameObject.Find("player").GetComponent<hitDebris>().pointsCounter = 0;
-
-        playerTransform.position = new Vector3(-0.109999999f, 0.478999853f, 0f);
+        SceneManager.LoadScene("SampleScene");
+        
 
     }
 

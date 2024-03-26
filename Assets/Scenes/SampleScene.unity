@@ -560,6 +560,7 @@ MonoBehaviour:
   timer: 6
   offset: -3
   debris: {fileID: 7778240322105002773, guid: 25c4063a65457964eae954c5d868f094, type: 3}
+  positionReached: 0
 --- !u!4 &206643773
 Transform:
   m_ObjectHideFlags: 0
@@ -612,7 +613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.8, y: 60.5}
+  m_AnchoredPosition: {x: 337, y: -186}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236603371
@@ -631,6 +632,7 @@ MonoBehaviour:
   textCOmp2: {fileID: 1513941679}
   retry: {fileID: 236603372}
   playerTransform: {fileID: 0}
+  oC: {fileID: 896698034}
 --- !u!114 &236603372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,6 +952,7 @@ MonoBehaviour:
   timer: 3
   offset: 2
   debris: {fileID: 7778240322105002773, guid: 25c4063a65457964eae954c5d868f094, type: 3}
+  positionReached: 0
 --- !u!4 &595960771
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,6 +1132,7 @@ MonoBehaviour:
   timer: 4
   offset: -6
   debris: {fileID: 7778240322105002773, guid: 25c4063a65457964eae954c5d868f094, type: 3}
+  positionReached: 0
 --- !u!4 &624341444
 Transform:
   m_ObjectHideFlags: 0
@@ -1178,6 +1182,7 @@ MonoBehaviour:
   timer: 1
   offset: 8
   debris: {fileID: 7778240322105002773, guid: 25c4063a65457964eae954c5d868f094, type: 3}
+  positionReached: 0
 --- !u!4 &665660252
 Transform:
   m_ObjectHideFlags: 0
@@ -1227,6 +1232,7 @@ MonoBehaviour:
   timer: 4
   offset: -1
   debris: {fileID: 7778240322105002773, guid: 25c4063a65457964eae954c5d868f094, type: 3}
+  positionReached: 0
 --- !u!4 &896698035
 Transform:
   m_ObjectHideFlags: 0
