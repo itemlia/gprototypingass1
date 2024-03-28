@@ -29,16 +29,25 @@
                     "id": "27c01b63-7567-4e25-b3ff-e06bdd3b5314",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "MultiTap",
+                    "interactions": "MultiTap(tapCount=3)",
                     "initialStateCheck": true
                 },
                 {
                     "name": "useShield",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "83179a44-24fe-4cdf-a3f8-3c52af847a40",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap(duration=0.5,pressPoint=1)",
+                    "interactions": "Tap",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "unuseShield",
+                    "type": "Button",
+                    "id": "0944f486-7d3f-44cc-bc0c-7707f377a48d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "SlowTap",
                     "initialStateCheck": false
                 }
             ],
@@ -102,7 +111,7 @@
                     "name": "2D Vector",
                     "id": "b95cff5f-5e5a-4f4a-becd-216f123068b4",
                     "path": "2DVector",
-                    "interactions": "Hold(duration=1,pressPoint=1)",
+                    "interactions": "Hold(duration=1.5,pressPoint=1)",
                     "processors": "",
                     "groups": "",
                     "action": "moveUp",
@@ -112,7 +121,7 @@
                 {
                     "name": "up",
                     "id": "9ada48c2-2933-4393-9d5e-ffd6dec915a8",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -123,7 +132,7 @@
                 {
                     "name": "up",
                     "id": "35845ea9-0339-436a-94ac-397e7b03aab8",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Joystick>/stick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -172,6 +181,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "useShield",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "699356e5-e1a3-4d0e-b095-882231e0e59b",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "unuseShield",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5194b5e-c43d-40ca-aa5e-1c956adc42c0",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "unuseShield",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

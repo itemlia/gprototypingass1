@@ -19,12 +19,13 @@ public class retryButton : MonoBehaviour
     public void Start()
     {
         textComp = GameObject.Find("game over").GetComponent<TextMeshProUGUI>();
+        playerTransform = GameObject.Find("player").GetComponent<Transform>();
 
         gameObject.SetActive(false);
 
         var btn = retry.GetComponent<Button>();
         btn.onClick.AddListener(retryLevel);
-        playerTransform = GameObject.Find("player").GetComponent<Transform>();
+        
     }
     
 

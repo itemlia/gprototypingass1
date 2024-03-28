@@ -17,10 +17,20 @@ public class useShield : MonoBehaviour
             if (shieldActive == false)
             {
                 shield.SetActive(true);
+                shieldActive = true;
             } 
-            else if (shieldActive == true)
+            
+        }
+    }
+
+    public void disengageShield(InputAction.CallbackContext context)
+    {
+        if (context.interaction is SlowTapInteraction)
+        {
+            if (shieldActive == true)
             {
                 shield.SetActive(false);
+                shieldActive = false;
             }
         }
     }
