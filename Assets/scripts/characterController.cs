@@ -16,9 +16,9 @@ public class characterController : MonoBehaviour
     private bool collided;
     public float health = 100;
     
-
     private Vector3 value;
 
+    public useShield shield;
     private void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
@@ -52,7 +52,7 @@ public class characterController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("ground") && collided == false)
+        if (collision.gameObject.CompareTag("ground") && collided == false && shield.shieldActive == false)
         {
             if (gameObject.CompareTag("low"))
             {
@@ -70,6 +70,10 @@ public class characterController : MonoBehaviour
             {
                 health = health - 25; 
             }
+        } 
+        else if (collision.gameObject.CompareTag("ground") && collided == false && shield.shieldActive == true)
+        {
+            health = health;
         }
     }
 

@@ -38,17 +38,17 @@
                     "id": "83179a44-24fe-4cdf-a3f8-3c52af847a40",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap",
+                    "interactions": "Press",
                     "initialStateCheck": true
                 },
                 {
                     "name": "unuseShield",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "0944f486-7d3f-44cc-bc0c-7707f377a48d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "SlowTap",
-                    "initialStateCheck": false
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [

@@ -2309,19 +2309,7 @@ MonoBehaviour:
     m_ActionId: 83179a44-24fe-4cdf-a3f8-3c52af847a40
     m_ActionName: movement/useShield[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1763324801}
-        m_TargetAssemblyTypeName: useShield, Assembly-CSharp
-        m_MethodName: disengageShield
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 0944f486-7d3f-44cc-bc0c-7707f377a48d
     m_ActionName: movement/unuseShield[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
