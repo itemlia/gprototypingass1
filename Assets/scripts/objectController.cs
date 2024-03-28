@@ -19,9 +19,11 @@ public class objectController : MonoBehaviour
 
     public IEnumerator dropTimer()
     {
-        
-        yield return new WaitForSeconds(timer);
-        Instantiate(debris, new Vector3(tRock.position.x + offset, tRock.position.y, 0f), Quaternion.identity);
+        while (tPlayer.position.y <= tRock.position.y)
+        {
+            yield return new WaitForSeconds(timer);
+            Instantiate(debris, new Vector3(tRock.position.x + offset, tRock.position.y, 0f), Quaternion.identity);
+        }
     }
 
     private void Start()
